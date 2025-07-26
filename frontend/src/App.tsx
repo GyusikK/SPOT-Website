@@ -1,16 +1,18 @@
 import { Box } from "@chakra-ui/react"
 import NavBar from "./components/NavBar"
-import { Heading } from "@chakra-ui/react"
+import HomePageStructure from "./pages/HomePageStructure"
+import { Route, Routes } from "react-router-dom"
+
 
 
 function App() {
 
   return (
-    <Box bg="#D9D9D9" minH="100vh" w="100vw" >
+    <Box bg="#D9D9D9" minH="100vh" w="100%" pt="90px">
       <NavBar />
-      <Heading>
-        SPOT APP
-      </Heading>
+      <Routes>
+        <Route path="/" element={<HomePageStructure />} />
+      </Routes>
     </Box>
   )
 }

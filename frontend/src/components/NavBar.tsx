@@ -2,18 +2,26 @@ import { Box, Container, Flex, HStack, Image, Text, Link } from "@chakra-ui/reac
 import logo from "../assets/spotlog 1.png"; // Replace with your actual logo path
 
 const Navbar = () => (
-  <Box bg="white" borderBottom="1px solid #e2e2e2">
+  <Box 
+    bg="white" 
+    borderBottom="1px solid #e2e2e2"
+    position="fixed"
+    top={0}
+    left={0}
+    right={0}
+    zIndex={1000}
+  >
     <Container maxW="container.xl" px={6}>
       <Flex h="90px" align="center" justify="space-between">
         {/* Logo and Title */}
-        <HStack gap={4}>
+        <HStack gap={6}>
           <Image src={logo} alt="SPOT Logo" boxSize="64px" borderRadius="full" bg="#D9EAFE" alignItems="left"/>
-          <Text fontSize="3xl" fontWeight="bold" fontFamily="inherit">SPOT</Text>
-        </HStack>
+          <Text fontFamily="Inter" fontSize="3xl" fontWeight="900">SPOT</Text>
+        </HStack> 
 
         {/* Centered Menu */}
 
-        <HStack gap={16}>
+        <HStack gap={28}>
           <Link href="#" fontWeight="medium">Home</Link>
           <Link href="#" fontWeight="medium">Volunteer & Events</Link>
           <Link href="#" fontWeight="medium">About the App</Link>
