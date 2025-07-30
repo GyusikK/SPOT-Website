@@ -12,7 +12,7 @@ const Navbar = () => (
     zIndex={1000}
   >
     <Container maxW="container.xl" px={6}>
-      <Flex h="90px" align="center" justify="space-between">
+      <Flex h="90px" align="center" justify="space-between" pl={9}>
         {/* Logo and Title */}
         <HStack gap={6}>
           <Image src={logo} alt="SPOT Logo" boxSize="64px" borderRadius="full" bg="#D9EAFE" alignItems="left"/>
