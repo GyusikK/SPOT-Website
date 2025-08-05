@@ -8,7 +8,7 @@ import { Route, Routes } from "react-router-dom"
 function App() {
 
   return (
-    <Box bg="#D9D9D9" minH="100vh" w="100%" pt="90px">
+    <Box bg="#FFFFFF" minH="100vh" w="100%" pt="90px">
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePageStructure />} />

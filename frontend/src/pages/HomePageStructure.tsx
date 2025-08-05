@@ -1,12 +1,12 @@
 import MainScreen from '../components/MainScreen'
-import DrugInfo from '../components/DrugInfo'
+import SpotInfo from '../components/SpotInfo'
 import { Box } from '@chakra-ui/react'
 
 const HomePageStructure = () => {
   return (
     <Box>
       <MainScreen />
-      <DrugInfo />
+      <SpotInfo />
     </Box>
   )
 }

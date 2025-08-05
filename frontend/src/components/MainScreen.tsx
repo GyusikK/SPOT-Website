@@ -12,6 +12,7 @@ const MainScreen = () => {
             fontFamily="Inter"
             lineHeight="1.1"
             color="black"
+            userSelect="none"
           >
             Student Powered Overdose-Detection Technology
           </Text>
