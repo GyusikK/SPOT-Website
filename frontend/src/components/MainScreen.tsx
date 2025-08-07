@@ -1,5 +1,4 @@
-import { Container, VStack, Text, Button, HStack } from "@chakra-ui/react";
-import { IPhoneMockup } from "react-device-mockup";
+import { Container, VStack, Text, Button, HStack, Image } from "@chakra-ui/react";
 
 const MainScreen = () => {
   return (
@@ -44,11 +43,7 @@ const MainScreen = () => {
           </Button>
         </VStack>
 
-        <IPhoneMockup screenWidth={260} frameColor="black" screenType="notch">
-          <div>
-            Hello
-          </div>
-        </IPhoneMockup>
+        <Image src="/Phone Mockup.png" alt="Phone" />
       </HStack>
     </Container>
   ); 
