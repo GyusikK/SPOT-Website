@@ -5,12 +5,12 @@ const MainScreen = () => {
     <Box bg="white">
       <Container maxW="container.xl"
         px={{ base: 4, md: 6 }}
-        pt={{ base: 4, md: 0 }}  
+        pt={{ base: 4, md: 0 }}
         pb={{ base: 8, md: 5 }}>
         <HStack
           gap={{ base: 10, md: 48 }}
           align="center"
-          flexDir={{ base: "column", md: "row" }}   
+          flexDir={{ base: "column", md: "row" }}
         >
           <VStack align="start" gap={{ base: 5, md: 6 }} maxW={{ md: "800px" }} pl={{ base: 0, md: 8 }} w="full">
             <Text
@@ -39,7 +39,7 @@ const MainScreen = () => {
             </Text>
 
             <Button
-              size="lg"                                
+              size="lg"
               bg="#102040"
               color="white"
               _hover={{ bg: "blue.900" }}

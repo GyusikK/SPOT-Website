@@ -2,6 +2,7 @@ import MainScreen from '../components/MainScreen'
 import SpotInfo from '../components/SpotInfo'
 import { Box } from '@chakra-ui/react'
 import SmallStatement from '../components/SmallStatement'
+import DrugInfo from '../components/DrugInfo'
 
 const HomePageStructure = () => {
   return (
@@ -9,6 +10,7 @@ const HomePageStructure = () => {
       <MainScreen />
       <SpotInfo />
       <SmallStatement />
+      <DrugInfo />
     </Box>
   )
 }
