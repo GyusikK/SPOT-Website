@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Container, Text, Grid, GridItem } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Text,
+  Grid,
+  GridItem,
+  Heading,
+} from "@chakra-ui/react";
 
 type BubbleSpec = {
   label: string;
@@ -10,12 +17,48 @@ type BubbleSpec = {
 };
 
 const bubbles: BubbleSpec[] = [
-  { label: "Crack/Cocaine",   w: { base: "150px", md: "220px" }, h: { base: "48px", md: "70px" },  top: "18%", left: "6%"  },
-  { label: "Fentanyl",        w: { base: "120px", md: "130px" }, h: { base: "48px", md: "70px" },  top: "10%", left: "42%" },
-  { label: "MDMA",            w: { base: "110px", md: "120px" }, h: { base: "56px", md: "90px"  }, top: "34%", left: "58%" },
-  { label: "Methamphetamine", w: { base: "220px", md: "310px" }, h: { base: "64px", md: "120px" }, top: "40%", left: "22%" },
-  { label: "Benzodiazepine",  w: { base: "200px", md: "280px" }, h: { base: "56px", md: "90px"  }, top: "68%", left: "8%"  },
-  { label: "Heroin",          w: { base: "110px", md: "110px" }, h: { base: "52px", md: "80px"  }, top: "68%", left: "52%" },
+  {
+    label: "Crack/Cocaine",
+    w: { base: "180x", md: "220px" },
+    h: { base: "64px", md: "90px" },
+    top: "16%",
+    left: "4%",
+  },
+  {
+    label: "Fentanyl",
+    w: { base: "130px", md: "130px" },
+    h: { base: "64px", md: "90px" },
+    top: "6%",
+    left: "46%",
+  },
+  {
+    label: "MDMA",
+    w: { base: "125px", md: "120px" },
+    h: { base: "72px", md: "100px" },
+    top: "25%",
+    left: "70%",
+  },
+  {
+    label: "Methamphetamine",
+    w: { base: "260px", md: "300px" },
+    h: { base: "96px", md: "130px" },
+    top: "40%",
+    left: "20%",
+  },
+  {
+    label: "Benzodiazepine",
+    w: { base: "220x", md: "300px" },
+    h: { base: "72px", md: "110px" },
+    top: "72%",
+    left: "6%",
+  },
+  {
+    label: "Heroin",
+    w: { base: "125px", md: "150px" },
+    h: { base: "68px", md: "96px" },
+    top: "72%",
+    left: "56%",
+  },
 ];
 
 const Bubble = ({ label, w, h, top, left }: BubbleSpec) => (
@@ -24,8 +67,8 @@ const Bubble = ({ label, w, h, top, left }: BubbleSpec) => (
     position={{ base: "static", md: "absolute" }}
     top={{ md: top }}
     left={{ md: left }}
-    w={w}
     h={h}
+    w={w}
     display="flex"
     alignItems="center"
     justifyContent="center"
@@ -33,13 +76,15 @@ const Bubble = ({ label, w, h, top, left }: BubbleSpec) => (
     px={{ base: 3, md: 4 }}
     borderRadius="2xl"
     // ⬇️ kept your gradient props exactly as provided
-    bgGradient="to-b"
-    gradientFrom="#83B3F3"
-    gradientTo="#5E83CD"
+    bg="#83B3F3"
     color="white"
     boxShadow="lg"
   >
-    <Text fontWeight="light" fontFamily="Inter" fontSize={{ base: "sm", md: "lg" }}>
+    <Text
+      fontWeight="300"
+      fontFamily="Inter"
+      fontSize={{ base: "sm", md: "xl" }}
+    >
       {label}
     </Text>
   </Box>
@@ -48,8 +93,10 @@ const Bubble = ({ label, w, h, top, left }: BubbleSpec) => (
 const DrugInfo = () => {
   return (
     <Box>
-      <Container my={{ base: 2, md: 4 }} maxW={{ base: "container.sm", md: "container.xl" }}>
-        {/* Left bubbles (and your right side later) */}
+      <Container
+        my={{ base: 2, md: 4 }}
+        maxW={{ base: "container.sm", md: "container.xl" }}
+      >
         <Grid
           templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
           gap={{ base: 4, md: 6 }}
@@ -58,7 +105,6 @@ const DrugInfo = () => {
         >
           <GridItem>
             <Box
-              // 📱 flex-wrap so bubbles wrap into rows; 💻 fixed-height canvas for absolute layout
               position="relative"
               h={{ base: "auto", md: "500px" }}
               display={{ base: "flex", md: "block" }}
@@ -72,7 +118,21 @@ const DrugInfo = () => {
             </Box>
           </GridItem>
 
-          {/* Add your right column content here as another GridItem when ready */}
+          {/* Text Section */}
+          <GridItem>
+            <Box alignContent={"left"} py={{ base: 8, md: "5%" }}>
+              <Heading
+                color="#102040"
+                fontFamily="Inter"
+                fontSize={{ base: "3xl", md: "6xl" }}
+                fontWeight={{ base: "300", md: "500" }}
+                lineHeight={{base: "1.15", md: "1.05" }}
+                maxW={{ base: "100%", md: "85%" }}
+              >
+                How Does Drug Usage at UBC Affect Students?
+              </Heading>
+            </Box>
+          </GridItem>
         </Grid>
       </Container>
     </Box>
