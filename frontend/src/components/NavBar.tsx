@@ -1,4 +1,5 @@
 import { Box, Container, Flex, HStack, Image, Text, Link } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 import logo from "../assets/spotlog 1.png"; // Replace with your actual logo path
 
 const Navbar = () => (
@@ -22,10 +23,10 @@ const Navbar = () => (
         {/* Centered Menu */}
 
         <HStack gap={28}>
-          <Link href="#" fontWeight="medium">Home</Link>
+          <RouterLink to="/"><Text fontWeight="medium">Home</Text></RouterLink>
           <Link href="#" fontWeight="medium">Volunteer & Events</Link>
           <Link href="#" fontWeight="medium">About the App</Link>
-          <Link href="#" fontWeight="medium">About Us</Link>
+          <RouterLink to="/about"><Text fontWeight="medium">About Us</Text></RouterLink>
           <Link href="#" fontWeight="medium">Download App</Link>
         </HStack>
       </Flex>

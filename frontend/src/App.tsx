@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react"
 import NavBar from "./components/NavBar"
 import HomePageStructure from "./pages/HomePageStructure"
+import AboutUs from "./pages/AboutUs"
 import { Route, Routes } from "react-router-dom"
 
 
@@ -12,6 +13,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePageStructure />} />
+        <Route path="/about" element={<AboutUs />} />
       </Routes>
     </Box>
   )
