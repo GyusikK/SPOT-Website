@@ -4,8 +4,8 @@ import nathanPhoto from "../assets/members/NathanPhoto.jpg"
 import emmaPhoto from "../assets/members/emmaphoto.jpg"
 import anshPhoto from "../assets/members/anshphoto.png"
 import louisPhoto from "../assets/members/louisphoto.jpg"
-// import willPhoto from "../assets/members/willphoto.jpg"
-// import aureliaPhoto from "../assets/members/aureliaphoto.jpg"
+import willPhoto from "../assets/members/willphoto.png"
+import aureliaPhoto from "../assets/members/aureliaphoto.jpg"
 // import johnPhoto from "../assets/members/johnphoto.jpg"
 
 type Member = {
@@ -21,9 +21,9 @@ const PLACEHOLDER_MEMBERS: Member[] = [
   { id: "2", name: "Nathan Millward", department: "Co-Founder", faculty: "Science", photo: nathanPhoto },
   { id: "3", name: "Emma Millward", department: "Co-Founder", faculty: "Commerce", photo: emmaPhoto },
   { id: "4", name: "Ansh Sharma", department: "Tech Lead", faculty: "Science", photo: anshPhoto },
-  { id: "5", name: "Will Lee", department: "Developer Executive", faculty: "Science" },
+  { id: "5", name: "Will Lee", department: "Developer Executive", faculty: "Science", photo: willPhoto },
   { id: "6", name: "Louis Ryu", department: "Product Management Executive", faculty: "Commerce", photo: louisPhoto },
-  { id: "7", name: "Aurelia Dominique", department: "Marketing Executive", faculty: "Commerce" },
+  { id: "7", name: "Aurelia Dominique", department: "Marketing Executive", faculty: "Commerce", photo: aureliaPhoto },
   { id: "8", name: "John Lee", department: "Developer Executive", faculty: "Science" },
 ]
 
