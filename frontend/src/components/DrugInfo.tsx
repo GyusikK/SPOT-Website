@@ -6,6 +6,7 @@ import {
   Grid,
   GridItem,
   Heading,
+  VStack,
 } from "@chakra-ui/react";
 
 type BubbleSpec = {
@@ -99,7 +100,7 @@ const DrugInfo = () => {
       >
         <Grid
           templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
-          gap={{ base: 4, md: 6 }}
+          gap={{ base: 2, md: 2 }}
           position="relative"
           py={{ base: 6, md: 10 }}
         >
@@ -119,19 +120,33 @@ const DrugInfo = () => {
           </GridItem>
 
           {/* Text Section */}
-          <GridItem>
-            <Box alignContent={"left"} py={{ base: 8, md: "5%" }}>
+          <GridItem maxW="85%">
+            <VStack
+              align="left"
+              gap={{ base: 2, md: 5 }}
+              py={{ base: 5, md: 10 }}
+            >
               <Heading
                 color="#102040"
                 fontFamily="Inter"
                 fontSize={{ base: "3xl", md: "6xl" }}
                 fontWeight={{ base: "300", md: "500" }}
-                lineHeight={{base: "1.15", md: "1.05" }}
+                lineHeight={{ base: "1.15", md: "1.05" }}
                 maxW={{ base: "100%", md: "85%" }}
               >
                 How Does Drug Usage at UBC Affect Students?
               </Heading>
-            </Box>
+              <Text
+                fontFamily="Inter"
+                fontSize={{base:"lg" ,md:"2xl"}}
+                fontWeight={{sm:"200", md:"250"}}
+              >
+                Many drugs come from unregulated, tainted supplies, which put
+                users at risk of fatality. It is impossible for users to
+                identify a tainted supply until the drugs have been consumed,
+                making accidental overdoses a severe threat to many.
+              </Text>
+            </VStack>
           </GridItem>
         </Grid>
       </Container>
