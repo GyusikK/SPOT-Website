@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Container,
   Stack,
@@ -8,6 +7,7 @@ import {
   Box,
   VStack,
 } from "@chakra-ui/react";
+import smallBottleGuy from "../assets/SmallBottleGuy.png";
 
 const SmallStatement = () => {
   return (
@@ -19,7 +19,7 @@ const SmallStatement = () => {
           align="center"
         >
           <Image
-            src="/src/assets/SmallBottleGuy.png"
+            src={smallBottleGuy}
             alt="Overdose detection mascot"
             w={{ base: "200px", md: "240px", lg: "280px" }}
             maxW="40%"         

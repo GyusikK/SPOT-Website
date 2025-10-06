@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   VStack,
   Heading,
@@ -11,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { TfiSearch } from 'react-icons/tfi';
 import { PiTarget } from 'react-icons/pi';
+import disclaimerguy from '../assets/disclaimerguy.png';
 
 const SpotInfo = () => {
   return (
@@ -40,7 +40,7 @@ const SpotInfo = () => {
           mb={0}
         >
           <Image
-            src="/src/assets/disclaimerguy.png"
+            src={disclaimerguy}
             alt="Disclaimer"
             width={{ base: '140px', md: '200px' }}
             objectFit="contain"
