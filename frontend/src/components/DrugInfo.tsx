@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Container,
@@ -140,6 +139,7 @@ const DrugInfo = () => {
                 fontFamily="Inter"
                 fontSize={{base:"lg" ,md:"2xl"}}
                 fontWeight={{sm:"200", md:"250"}}
+                color={"#102040"}
               >
                 Many drugs come from unregulated, tainted supplies, which put
                 users at risk of fatality. It is impossible for users to

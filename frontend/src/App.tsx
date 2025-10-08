@@ -2,8 +2,11 @@ import { Box } from "@chakra-ui/react"
 import NavBar from "./components/NavBar"
 import HomePageStructure from "./pages/HomePageStructure"
 import AboutUs from "./pages/AboutUs"
+import VolunteerEvents from "./pages/VolunteerEvents"
+import AboutApp from "./pages/AboutApp"
+import DownloadApp from "./pages/DownloadApp"
+import Mission from "./pages/Mission"
 import { Route, Routes } from "react-router-dom"
-import MissionStatement from "./components/MissionStatement"
 
 
 
@@ -14,8 +17,11 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePageStructure />} />
+        <Route path="/volunteer" element={<VolunteerEvents />} />
+        <Route path="/about-app" element={<AboutApp />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/mission" element={<MissionStatement />} />
+        <Route path="/download" element={<DownloadApp />} />
+        <Route path="/mission" element={<Mission />} />
       </Routes>
     </Box>
   )
