@@ -6,7 +6,7 @@ import {
   Text,
   HStack,
   Stack,
-  Container,   // ⬅️ import Container
+  Container,   
 } from '@chakra-ui/react';
 import { TfiSearch } from 'react-icons/tfi';
 import { PiTarget } from 'react-icons/pi';
@@ -14,7 +14,7 @@ import disclaimerguy from '../assets/disclaimerguy.png';
 
 const SpotInfo = () => {
   return (
-    <Container maxW="container.xl">   {/* ⬅️ wrap everything */}
+    <Container maxW="container.xl">   
       <VStack
         py={{ base: 12, md: 20 }}
         align="center"

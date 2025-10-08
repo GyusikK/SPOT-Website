@@ -1,91 +1,147 @@
-import { Box, Container, Stack, Heading, Text, Button, HStack } from '@chakra-ui/react';
-import bg from '../assets/SpotUbcBackground.png';
+import React from "react";
+import {
+  Box,
+  Container,
+  Grid,
+  GridItem,
+  Heading,
+  HStack,
+  Image,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 
-const MissionStatement = () => {
+import shield from "../assets/Spot-shield-bullet.png";
+import warn from "../assets/Spot-warn-bullet.png";
+import handshake from "../assets/Spot-handshake-bullet.png";
+
+interface InfoBulletProps {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+function InfoBullet({ icon, title, description }: InfoBulletProps) {
   return (
-    <Box
-      position="relative"
-      bgImage={`url(${bg})`}
-      bgSize="cover"
-      bgPos={{ base: 'center', md: 'center 25%' }}
-      bgRepeat="no-repeat"
-      w="100%"
-      minH="85vh"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      color="white"
-      textAlign={{ base: 'center', md: 'left' }}
-    >
-      <Box
-        position="absolute"
-        top="0"
-        left="0"
-        right="0"
-        bottom="0"
-        bgGradient="linear(to-t, rgba(10,18,36,0.85) 0%, rgba(10,18,36,0.5) 50%, rgba(10,18,36,0.2) 100%)"
-        zIndex={0}
-      />
+    <Box p={4}>
+      <HStack align="start" gap={4}>
+        <Box
+          bg="transparent"
+          w="48px"
+          h="48px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          borderRadius="full"
+          mt={1.5}
+        >
+          <Image
+            src={icon}
+            alt={`${title} icon`}
+            boxSize="28px"
+            objectFit="contain"
+          />
+        </Box>
 
-      <Container maxW="container.lg" position="relative" zIndex={1}>
-        <Stack>
-          <Text
-            fontSize={{ base: 'sm', md: 'md' }}
-            textTransform="uppercase"
-            letterSpacing="widest"
-            opacity={0.9}
-          >
-            University of British Columbia
-          </Text>
+        <VStack align="left" gap={1}>
           <Heading
-            as="h2"
-            size={{ base: 'xl', md: '2xl' }}
-            lineHeight={1.2}
-            fontWeight="extrabold"
-            textShadow="0 4px 12px rgba(0,0,0,0.6)"
+            fontSize="lg"
+            fontWeight="bold"
+            color="gray.700"
+            fontFamily="Inter"
           >
-            Detect. Respond. Save Lives.
+            {title}
           </Heading>
-          <Text
-            fontSize={{ base: 'md', md: 'lg' }}
-            opacity={0.95}
-            textShadow="0 2px 8px rgba(0,0,0,0.7)"
-          >
-            SPOT is a confidential text-based safety line that provides real-time overdose
-            detection and response coordination for students. When a conversation goes quiet,
-            our system triggers a structured response plan to close the critical gap between
-            recognition and help.
+          <Text fontSize="md" color="gray.600" fontFamily="Inter">
+            {description}
           </Text>
-          <Text
-            fontSize={{ base: 'md', md: 'lg' }}
-            opacity={0.95}
-            textShadow="0 2px 8px rgba(0,0,0,0.7)"
+        </VStack>
+      </HStack>
+    </Box>
+  );
+}
+
+export default function MissionStatement() {
+  return (
+    <Box bg="white">
+      <Container maxW="container.xl" py={16}>
+        <VStack gap={12} align="center">
+          <Heading
+            size="4xl"
+            fontFamily="Inter"
+            fontWeight="extrabold"
+            color="gray.800"
+            textAlign="center"
           >
-            Built for residence and campus life, SPOT connects people who use drugs with
-            trained student volunteers and campus resources. The goal is simple: reduce harm,
-            protect privacy, and make it easy to get help fast—without judgment.
-          </Text>
-          <HStack
-            pt={{ base: 2, md: 4 }}
-            justify={{ base: 'center', md: 'flex-start' }}
+            Our Mission
+          </Heading>
+
+          {/* Grid with vertical line in the middle */}
+          <Grid
+            templateColumns={{ base: "1fr", md: "1fr 1px 1fr" }}
+            gap={12}
+            w="full"
           >
-            <Button as="a"  size={{ base: 'md', md: 'lg' }}>
-              Download App
-            </Button>
-            <Button
-              as="a"
-              
-              variant="outline"
-              size={{ base: 'md', md: 'lg' }}
-              _hover={{ bg: 'whiteAlpha.200' }}
-            >
-              Become a Volunteer
-            </Button>
-          </HStack>
-        </Stack>
+            {/* LHS Text */}
+            <GridItem>
+              <VStack align="left" gap={6}>
+                <Heading
+                  fontSize={{ base: "3xl", md: "4xl" }}
+                  fontFamily="Inter"
+                  fontWeight="bold"
+                  color="gray.700"
+                  lineHeight="shorter"
+                >
+                  The detection of an overdose is as crucial as the response.
+                </Heading>
+
+                <Text
+                  fontSize={{ base: "md", md: "lg" }}
+                  fontFamily="Inter"
+                  fontWeight="light"
+                  color="gray.600"
+                >
+                  Overdoses can become fatal without a detection system in
+                  place. This issue is particularly significant in a university
+                  setting, where students are confined to locked dorm rooms and
+                  the stigma surrounding drug use is pervasive.
+                </Text>
+              </VStack>
+            </GridItem>
+
+            {/* Divider Line */}
+            <GridItem display={{ base: "none", md: "block" }}>
+              <Box
+                height="100%"
+                width="1px"
+                bg="gray.300"
+                mx="auto"
+              />
+            </GridItem>
+
+            {/* RHS Bullets */}
+            <GridItem>
+              <VStack align="left" gap={6}>
+                <InfoBullet
+                  icon={shield}
+                  title="Prevent overdose fatalities"
+                  description="SPOT detects overdoses and supports students through a mutual-aid text platform."
+                />
+                <InfoBullet
+                  icon={warn}
+                  title="Ensure fast emergency response"
+                  description="Volunteers monitor for non-responsiveness quickly, reducing critical time between detection and help."
+                />
+                <InfoBullet
+                  icon={handshake}
+                  title="Promote safer drug-use"
+                  description="We aim to reduce harm by addressing the drug crisis on campus and encouraging responsible support."
+                />
+              </VStack>
+            </GridItem>
+          </Grid>
+        </VStack>
       </Container>
     </Box>
   );
-};
-
-export default MissionStatement;
+}
