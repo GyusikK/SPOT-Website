@@ -14,6 +14,7 @@ import {
 import shield from "../assets/Spot-shield-bullet.png";
 import warn from "../assets/Spot-warn-bullet.png";
 import handshake from "../assets/Spot-handshake-bullet.png";
+import ubcbackground from "../assets/SpotUbcBackground.png";
 
 interface InfoBulletProps {
   icon: string;
@@ -47,12 +48,12 @@ function InfoBullet({ icon, title, description }: InfoBulletProps) {
           <Heading
             fontSize="lg"
             fontWeight="bold"
-            color="gray.700"
+            color="#FFFFFF"
             fontFamily="Inter"
           >
             {title}
           </Heading>
-          <Text fontSize="md" color="gray.600" fontFamily="Inter">
+          <Text fontSize="md" color="#FFFFFF" fontFamily="Inter">
             {description}
           </Text>
         </VStack>
@@ -63,14 +64,21 @@ function InfoBullet({ icon, title, description }: InfoBulletProps) {
 
 export default function MissionStatement() {
   return (
-    <Box bg="white">
-      <Container maxW="container.xl" py={16}>
+    <Box 
+      backgroundImage={`linear-gradient(rgba(10, 45, 90, 0.82), rgba(10, 45, 90, 0.82)), url(${ubcbackground})`}
+      backgroundSize="cover"
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
+      pt="24"
+      overflowY="hidden"
+    >
+      <Container maxW="container.xl" pb={16}>
         <VStack gap={12} align="center">
           <Heading
             size="4xl"
             fontFamily="Inter"
             fontWeight="extrabold"
-            color="gray.800"
+            color="#FFFFFF"
             textAlign="center"
           >
             Our Mission
@@ -84,22 +92,22 @@ export default function MissionStatement() {
           >
             {/* LHS Text */}
             <GridItem>
-              <VStack align="left" gap={6}>
+              <VStack align="left" gap={8}>
                 <Heading
-                  fontSize={{ base: "3xl", md: "4xl" }}
+                  fontSize={{ base: "3xl", md: "5xl" }}
                   fontFamily="Inter"
                   fontWeight="bold"
-                  color="gray.700"
+                  color="#FFFFFF"
                   lineHeight="shorter"
                 >
                   The detection of an overdose is as crucial as the response.
                 </Heading>
 
                 <Text
-                  fontSize={{ base: "md", md: "lg" }}
+                  fontSize={{ base: "md", md: "xl" }}
                   fontFamily="Inter"
-                  fontWeight="light"
-                  color="gray.600"
+                  fontWeight="extralight"
+                  color="#FFFFFF"
                 >
                   Overdoses can become fatal without a detection system in
                   place. This issue is particularly significant in a university
