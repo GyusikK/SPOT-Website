@@ -1,7 +1,7 @@
 import { Box, Container, Flex, HStack, Image, Text, Link, Button, VStack } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { useState } from "react";
-import logo from "../assets/spotlog 1.png"; // Replace with your actual logo path
+import logo from "../assets/spotlog 1.jpg"; // Replace with your actual logo path
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,11 +66,11 @@ const Navbar = () => {
       <Container maxW="container.xl" px={6}>
         <Flex h="90px" align="center" justify="space-between" pl={{ base: 4, md: 9 }}>
           {/* Logo and Title */}
-          <HStack gap={{ base: 3, md: 6 }}>
+          <HStack gap={{ base: 1, md: 2 }}>
             <Image 
               src={logo} 
               alt="SPOT Logo" 
-              boxSize={{ base: "48px", md: "64px" }} 
+              boxSize={{ base: "48px", md: "80px" }} 
               borderRadius="full" 
               bg="#D9EAFE" 
               alignItems="left"
