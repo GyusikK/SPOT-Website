@@ -5,100 +5,87 @@ import {
   Grid,
   GridItem,
   Heading,
-  HStack,
-  Image,
   Text,
   VStack,
 } from "@chakra-ui/react";
-
-import shield from "../assets/Spot-shield-bullet.png";
-import warn from "../assets/Spot-warn-bullet.png";
-import handshake from "../assets/Spot-handshake-bullet.png";
 import ubcbackground from "../assets/SpotUbcBackground.png";
 
 interface InfoBulletProps {
-  icon: string;
   title: string;
   description: string;
 }
 
-function InfoBullet({ icon, title, description }: InfoBulletProps) {
+function InfoBullet({ title, description }: InfoBulletProps) {
   return (
-    <Box p={4}>
-      <HStack align="start" gap={4}>
-        <Box
-          bg="transparent"
-          w="48px"
-          h="48px"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          borderRadius="full"
-          mt={1.5}
-        >
-          <Image
-            src={icon}
-            alt={`${title} icon`}
-            boxSize="28px"
-            objectFit="contain"
-          />
-        </Box>
-
-        <VStack align="left" gap={1}>
-          <Heading
-            fontSize="lg"
-            fontWeight="bold"
-            color="#FFFFFF"
-            fontFamily="Inter"
-          >
-            {title}
-          </Heading>
-          <Text fontSize="md" color="#FFFFFF" fontFamily="Inter">
-            {description}
-          </Text>
-        </VStack>
-      </HStack>
-    </Box>
+    <VStack align="start" gap={2} m={0} p={0}>
+      <Heading
+        fontSize={{ base: "xl", md: "2xl" }}
+        fontWeight="extrabold"
+        color="white"
+        fontFamily="Inter"
+        lineHeight="short"
+        m={0}
+      >
+        {title}
+      </Heading>
+      <Text
+        fontSize={{ base: "md", md: "lg" }}
+        color="white"
+        fontFamily="Inter"
+        opacity={0.95}
+        m={0}
+      >
+        {description}
+      </Text>
+    </VStack>
   );
 }
 
 export default function MissionStatement() {
   return (
-    <Box 
-      backgroundImage={`linear-gradient(rgba(10, 45, 90, 0.82), rgba(10, 45, 90, 0.82)), url(${ubcbackground})`}
+    <Box
+      backgroundImage={`linear-gradient(rgba(10,45,90,0.82), rgba(10,45,90,0.82)), url(${ubcbackground})`}
       backgroundSize="cover"
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
-      pt="24"
-      overflowY="hidden"
+      minH="calc(100vh - 90px)"
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      overflow="hidden"
+      py={{ base: 8, md: 16 }}        // overall top/bottom breathing room
     >
-      <Container maxW="container.xl" pb={16}>
-        <VStack gap={12} align="center">
+      <Container maxW="container.xl">
+        <VStack gap={{ base: 10, md: 16 }} align="center">
           <Heading
             size="4xl"
             fontFamily="Inter"
             fontWeight="extrabold"
-            color="#FFFFFF"
+            color="white"
             textAlign="center"
+            m={0}
           >
             Our Mission
           </Heading>
 
-          {/* Grid with vertical line in the middle */}
           <Grid
             templateColumns={{ base: "1fr", md: "1fr 1px 1fr" }}
-            gap={12}
+            columnGap={{ base: 8, md: 16, lg: 24 }}  // ⬅️ more space between columns
+            rowGap={{ base: 10, md: 14 }}            // ⬅️ vertical gap on small screens
             w="full"
+            alignItems="start"
           >
-            {/* LHS Text */}
-            <GridItem>
-              <VStack align="left" gap={8}>
+            {/* LHS */}
+            <GridItem alignSelf="start" pr={{ base: 0, md: 10 }}>  {/* buffer from divider */}
+              <VStack align="start" gap={{ base: 6, md: 10 }}>
                 <Heading
                   fontSize={{ base: "3xl", md: "5xl" }}
                   fontFamily="Inter"
-                  fontWeight="bold"
-                  color="#FFFFFF"
+                  fontWeight="extrabold"
+                  color="white"
                   lineHeight="shorter"
+                  m={0}
+                  maxW={{ base: "100%", md: "760px" }}  // control line length
                 >
                   The detection of an overdose is as crucial as the response.
                 </Heading>
@@ -106,44 +93,38 @@ export default function MissionStatement() {
                 <Text
                   fontSize={{ base: "md", md: "xl" }}
                   fontFamily="Inter"
-                  fontWeight="extralight"
-                  color="#FFFFFF"
+                  fontWeight="light"
+                  color="white"
+                  opacity={0.95}
+                  m={0}
+                  maxW={{ base: "100%", md: "760px" }}
                 >
-                  Overdoses can become fatal without a detection system in
-                  place. This issue is particularly significant in a university
-                  setting, where students are confined to locked dorm rooms and
-                  the stigma surrounding drug use is pervasive.
+                  In the post-secondary environment especially, the risk of
+                  using drugs alone is often weighed against the fear of stigma
+                  or disciplinary consequences.
                 </Text>
               </VStack>
             </GridItem>
 
-            {/* Divider Line */}
-            <GridItem display={{ base: "none", md: "block" }}>
-              <Box
-                height="100%"
-                width="1px"
-                bg="gray.300"
-                mx="auto"
-              />
+            {/* Divider */}
+            <GridItem display={{ base: "none", md: "block" }} alignSelf="stretch">
+              <Box h="100%" w="1px" bg="whiteAlpha.500" mx="auto" />
             </GridItem>
 
-            {/* RHS Bullets */}
-            <GridItem>
-              <VStack align="left" gap={6}>
+            {/* RHS */}
+            <GridItem alignSelf="start" pl={{ base: 0, md: 10 }}>  {/* buffer from divider */}
+              <VStack align="start" gap={{ base: 8, md: 10 }}>
                 <InfoBullet
-                  icon={shield}
-                  title="Prevent overdose fatalities"
-                  description="SPOT detects overdoses and supports students through a mutual-aid text platform."
+                  title="Prevent Drug-Related Harms"
+                  description="SPOT detects overdoses and supports students through a student-operated mutual-aid platform."
                 />
                 <InfoBullet
-                  icon={warn}
-                  title="Ensure fast emergency response"
-                  description="Volunteers monitor for non-responsiveness quickly, reducing critical time between detection and help."
+                  title="Accelerate Emergency Response"
+                  description="Volunteers monitor for non-responsiveness, quickly responding to reduce the critical time period between overdose detection and response."
                 />
                 <InfoBullet
-                  icon={handshake}
-                  title="Promote safer drug-use"
-                  description="We aim to reduce harm by addressing the drug crisis on campus and encouraging responsible support."
+                  title="Promote Safer Drug-Use"
+                  description="Never Use Alone."
                 />
               </VStack>
             </GridItem>
